@@ -114,6 +114,21 @@ FORM
 	font-size: 75%;
 }
 
+#body-main_list, .body-main_list
+{
+	background-image: url('../images/body_bg_list.gif');
+	background-repeat: repeat-y;
+	padding: 0 7px 10px 7px;
+	margin: 0;
+	font-size: 75%;
+}
+
+.body-main_list
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
 .body-main
 {
 	padding-top: 1px;
@@ -129,6 +144,14 @@ FORM
 	margin: 0;
 	padding: 0;
 	background-image: url('../images/body_bottom.gif');
+	height: 11px;	
+	font-size: 1px;
+}
+#body-bottom_list, .body-bottom_list
+{
+	margin: 0;
+	padding: 0;
+	background-image: url('../images/body_bottom_list.gif');
 	height: 11px;	
 	font-size: 1px;
 }

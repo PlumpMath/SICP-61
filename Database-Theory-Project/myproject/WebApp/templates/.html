@@ -8,8 +8,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <title>FSU Computer Science - </title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <style type="text/css">
-	@import "../static/css/global.css";
-	@import "../static/css/page.css";
+	@import "/static/css/global.css";
+	@import "/static/css/page.css";
 </style>
 </head>
 
@@ -18,23 +18,22 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	 
 
 <!-- Begin include (header.php) -->
-<script type="text/javascript" src="../static/script/preload.js"></script>
+<script type="text/javascript" src="/static/script/preload.js"></script>
 
 <div id="header">
-  <div id="cslogo"><a href="http://www.cs.fsu.edu/index.php"><img name="cs_mini" src="../static/images/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science" /></a></div>
+  <div id="cslogo"><a href="http://www.cs.fsu.edu/index.php"><img name="cs_mini" src="/static/images/cs_mini.gif" width="151" height="23" border="0" alt="FSU Computer Science" /></a></div>
 <div id="minilinks"><a href="https://www.cs.fsu.edu/site/help.php">Help</a> | 
     <a href="https://www.cs.fsu.edu/admin/login.php">Login</a> 
    | <a href="https://www.cs.fsu.edu/site/contact.php">Contact</a> | <a href="https://www.cs.fsu.edu/site/sitemap.php">Site Map</a></div>
 </div>
-<h1><img src="../static/images/cs.gif" width="760" height="50" alt="FSU Computer Science" /></h1>
+<h1><img src="/static/images/cs.gif" width="760" height="50" alt="FSU Computer Science" /></h1>
 <div>
   <div id="linksLeft">
      <div>
 <!-- Begin XML ******************************************************************* -->
-<a href="/SCIP">Home</a> &gt; 
-	<a href="/Employers">Employers</a> &gt;
-	<a href="/Employers/Register">Register</a> &gt;
-	  
+<a href="/Employer/Home">Home</a> &gt; 
+	<a href="/Employers/AddInternships">Add Internship</a> &gt;
+
 
 <!-- End XML ********************************************************************* -->
 </div>
@@ -83,59 +82,35 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <!-- End include -->
 	<div id="body">
 		<body>
-        <div><img src="../static/images/blank_.gif" alt="Current Students" /></div>
+        <div><img src="/static/images/blank_.gif" alt="Employers" /></div>
 			<div id="body-main" style="padding-right: 4px;">
-    		<img src="../static/images/SICP_main.jpg" alt="logo"  />
-				<h1>Enter job id you'd like to remove</h1>
+            
+    		<img src="/static/images/SICP_main.jpg" alt="logo"  />
+				<h1>Add an Internship</h1>
 				<br>
 				<form action="" method="post">
-				<p><label for="job_id">Job id you want to update:</label> <br />
-        <input id="job_id" type="text" placeholder="job_id" name="job_id"  value="{{request.form.job_id }}"></p>
-        <p><label for="type">New Type:</label> <br />
-        <input id="type" type="text" placeholder="type" name="type"  value="{{request.form.type }}"></p>
-        <p><label for="description">New Description:</label> <br />
-        <input id="description" type="text" placeholder="description" name="description"  value="{{request.form.description }}"></p>
-        
-				
-				<input class="btn btn-default" type="submit" value="Update">
-			  </form>
-        <p style="margin-top: 0; font-size: 100%;">&nbsp;</p>
-        <h1>Your currently posted jobs</h1>
-      <table>
-            <tr>
-            <th> JOBID </th>
-            <th>Company Name</th>
-            <th>Company E-mail</th>
-            <th>Internship Position</th>
-            <th>Internship Description</th>
-            
-            </tr>
-          {% for row in table %}
-            <tr>
-    
-            <td>{{row[0]}}</td>
-            <td>{{row[1]}}</td>
-            <td>{{row[2]}}</td>
-            <td>{{row[3]}}</td>
-            <td>{{row[4]}}</td>
-                      
-            </tr>
-          {% endfor %}
-                </table>
+                <label for="i_title">Internship Title:</label><br />
+				<input type="text" placeholder="Position Name" name="posname" value="{{
+					request.form.posname }}">
+                <br/>
+                <label for="sometthing">Something else:</label><br />
+				<input type="text" placeholder="something" name="" value="">
+                <br />
+                <input type="file" name="internship_file" size="n"> 
+				<br /><br />
+                <input class="btn btn-default" type="submit" value="Submit"></form>
+                
 				{% if error %}
 				<p class="error"><strong>Error:</strong> {{ error }}
-			  {% endif %}</p>
-</div>
-
-
-
+				{% endif %}
+			</p></div>
 		</body>
 	<div id="body-bottom"></div>
 	</div>
 	<div id="rcolumn">
 		
 <!-- Begin XML ******************************************************************* -->
-<div class="sidebar"><img src="../static/images/employeelinks.gif" width="190" height="20" alt="Employee Links"/><div class="sidebar-main"><ul><li><a href="undergrad/index.html">Messages</a></li><li><a href="undergrad/minor.html">Applicants</a></li><li><a href="compbio/index.html">Search for Students</a></li></ul></div><div class="sidebarBottom"> </div>
+<div class="sidebar"><img src="/static/images/employeelinks.gif" width="190" height="20" alt="Employee Links"/><div class="sidebar-main"><ul><li><a href="undergrad/index.html">Messages</a></li><li><a href="undergrad/minor.html">Applicants</a></li><li><a href="compbio/index.html">Search for Students</a></li></ul></div><div class="sidebarBottom"> </div>
 
 <!-- End XML ********************************************************************* -->
 	</div>
@@ -150,7 +125,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       <a href="https://www.cs.fsu.edu/site/feedback.php?referrer=/current/">Comment or Report a Problem</a>    </div>
     <div id="foot-rcolumn"><a href="#top">top</a>
     </div>
-  </div>
 <!-- End include *********************************************************************** -->
 </div>
 </body>
