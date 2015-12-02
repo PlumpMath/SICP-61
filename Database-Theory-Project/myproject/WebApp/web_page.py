@@ -32,12 +32,24 @@ def main():
     session.clear()
     app.logger.debug('Main page accessed')
     return render_template('index.html')
-
+	
 @app.route('/SCIP')
+def choicefix():
+    app.logger.debug('Main page accessed')
+    
+    return redirect('/SICP')
+	
+@app.route('/SICP')
 def choice():
     app.logger.debug('Main page accessed')
     
     return render_template('choice.html')
+	
+@app.route('/logout')
+def logout():
+	session.clear()
+	
+	return redirect('/SICP')
 
 #
 ##
